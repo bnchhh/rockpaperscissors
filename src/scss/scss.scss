@@ -1,0 +1,66 @@
+@import "oswald.scss";
+
+body {
+  background-color: #ffea00;
+  font-family: "Oswald", sans-serif;
+}
+
+.root {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rules {
+  text-align: center;
+  h2 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+.game-logo {
+  background-image: url("../img/game.png");
+  background-size: cover;
+  width: 550px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+#game {
+  text-align: center;
+}
+
+.button-container {
+  margin: 1em;
+  button {
+    display: inline-block;
+    padding: 0.7em 3em;
+    border: none;
+    width: 150px;
+    margin: 0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+    background: #f7f6f7;
+  }
+  .fired {
+    background: #888788;
+    color: #f7f6f7;
+  }
+}
+
+#reset-button {
+  padding: 0.5em 3em;
+  border: 0.15em solid #f7f6f7;
+  width: 200px;
+  margin: 3em;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  background: transparent;
+}
