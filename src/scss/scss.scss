@@ -17,9 +17,6 @@ body {
   h2 {
     font-size: 2rem;
   }
-  p {
-    font-size: 1.5rem;
-  }
 }
 
 .game-logo {
@@ -54,13 +51,31 @@ body {
     color: #f7f6f7;
   }
 }
+.func-container {
+  display: flex;
+  .func-button {
+    display: inline-block;
+    padding: 0.5em 3em;
+    border: 0.15em solid #f7f6f7;
+    width: 200px;
+    margin: 3em;
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif;
+    background: transparent;
+  }
+}
 
-#reset-button {
-  padding: 0.5em 3em;
-  border: 0.15em solid #f7f6f7;
-  width: 200px;
-  margin: 3em;
-  text-transform: uppercase;
-  font-family: "Oswald", sans-serif;
-  background: transparent;
+#new-game {
+  display: none;
+}
+
+p,
+span {
+  font-size: 1.5rem;
+}
+.counter-block {
+  .counter-label {
+    display: inline-block;
+    margin: 0 5px;
+  }
 }

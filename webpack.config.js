@@ -10,7 +10,7 @@ const PrettierPlugin = require("prettier-webpack-plugin");
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
-    entry: './js/index.js',
+    entry: ['@babel/polyfill', './js/index.js'],
     output: {
         filename: 'js/app.js',
         path: path.resolve(__dirname, 'dist')
@@ -29,12 +29,7 @@ module.exports = {
     module: {
         rules: [{
                 test: /\.s[ac]ss$/,
-                use: [{
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            publicPath: '../'
-                        },
-                    },
+                use: ['style-loader',
                     'css-loader',
                     'sass-loader'
                 ]

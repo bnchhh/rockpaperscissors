@@ -1,36 +1,47 @@
+import { PAPER_KEY, SCISSORS_KEY, ROCK_KEY } from "./constants";
+
 class AiStrategyInterface {
-  getComputerChoice() {}
+  constructor(roundNumber) {
+    this.roundNumber = roundNumber;
+  }
+
+  getComputerChoice() {
+    throw Error("This method should be overwrited");
+  }
 }
 
 class AiRandom extends AiStrategyInterface {
   getComputerChoice() {
-    //we are getting random int value from 1 to 3
     const randomValue = Math.ceil(Math.random() * 3);
 
     if (randomValue === 1) {
-      return "rock";
+      return ROCK_KEY;
     }
-
     if (randomValue === 2) {
-      return "scissors";
+      return SCISSORS_KEY;
     }
 
     if (randomValue === 3) {
-      return "paper";
+      return PAPER_KEY;
     }
-  }
-}
-
-class AiSimulacrum extends AiStrategyInterface {
-  getComputerChoice() {
-    //previous choice
   }
 }
 
 class AiTurnByTurn extends AiStrategyInterface {
   getComputerChoice() {
-    //numberOfRound%3
+    const roundValue = this.roundNumber % 3;
+    if (roundValue === 0) {
+      return ROCK_KEY;
+    }
+
+    if (roundValue === 1) {
+      return SCISSORS_KEY;
+    }
+
+    if (roundValue === 2) {
+      return PAPER_KEY;
+    }
   }
 }
 
-export { AiRandom };
+export { AiTurnByTurn, AiRandom };
