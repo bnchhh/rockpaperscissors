@@ -47,7 +47,9 @@ const main = function () {
   document.addEventListener("game-lost", () => {
     document.getElementById("new-game").style.display = "block";
     game.resultLabel.showLose();
-    highScorePrompt(gamesWon);
+    if (gamesWon) {
+      highScorePrompt(gamesWon);
+    }
   });
 
   //first start
